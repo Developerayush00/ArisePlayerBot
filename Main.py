@@ -106,6 +106,9 @@ async def check_afk(_, message: Message):
     if message.from_user.id in afks:
         afks.pop(message.from_user.id)
         await message.reply(f"Welcome back, {message.from_user.first_name}!")
+from keep_alive import keep_alive
+
+keep_alive()  # 24/7 alive system
 
 # Run
 app.start()
